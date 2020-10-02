@@ -3,6 +3,7 @@
  */
 package com.adri.presentacion;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import com.adri.negocio.Calculo;
@@ -23,7 +24,11 @@ public class Vista {
 		System.out.println("Introduce el nombre de la persona a la que quieres calcularle el índice de masa corporal: ");
 		String nombre = sc.next();
 		
-		System.out.println("El índice de masa corporal de " + nombre + " es " + calculo.calcularIndice(nombre));
+		try {
+			System.out.println("El índice de masa corporal de " + nombre + " es " + calculo.calcularIndice(nombre));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 	}
 

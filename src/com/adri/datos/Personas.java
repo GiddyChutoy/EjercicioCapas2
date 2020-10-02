@@ -14,8 +14,8 @@ import java.io.IOException;
  */
 public class Personas {
 	private String nombre;
-	private int peso;
-	private int altura;
+	private double peso;
+	private double altura;
 	
 	public void cogerDatos(String nombre) throws IOException {
 		File fichero = new File("C:/Users/Giddy/Documents/personas.txt");
@@ -25,8 +25,8 @@ public class Personas {
 			String[] array = linea.split("-");
 			if(array[0].equalsIgnoreCase(nombre)) {
 				this.nombre = array[0];
-				peso = Integer.parseInt(array[1]);
-				altura = Integer.parseInt(array[2]);
+				peso = Double.parseDouble(array[1]);
+				altura = Double.parseDouble(array[2]);
 				break;
 			}
 		}
@@ -49,7 +49,7 @@ public class Personas {
 	/**
 	 * @return the peso
 	 */
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
@@ -63,7 +63,7 @@ public class Personas {
 	/**
 	 * @return the altura
 	 */
-	public int getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
